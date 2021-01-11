@@ -8,6 +8,10 @@ public:
     // complex& operator += (const complex& com);
     T real() {return re;}
     T imag() {return im;}
+    inline const T& min(const T& a, const T& b)
+    {
+        return b < a ? b : a;
+    }
 private:
     T re, im;
 };
