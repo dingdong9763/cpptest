@@ -49,10 +49,11 @@ String::String(const String& str) {
 
 // 拷贝赋值 b = a
 // 首先 需要把 b清空 然后重新分配一块和a一样大的内存 将a拷贝过来
+// &：修饰类型是引用；修饰变量是取地址，得到一个指针
 inline
-String& String::operator=(const String& str) {
+String& String::operator=(const String& str) {//放在typename后面的& ，是reference
     // 检测是不是自己 如果没有这一步 可能会出现错误 影响效率 因为第一个动作是把自己杀掉，如果a = a，那么没有东西可以拷贝了
-    if(this==&str) {
+    if(this == &str) {//放在object（变量）的前面，意思是取地址
         return *this;
     }
     // #1 把自己的内存空间删掉
