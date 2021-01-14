@@ -4,7 +4,8 @@ using namespace std;
 
 class Fraction{
 public:
-    // non-explicit-one-argument ctor (非显式的一个参数)
+    // 转换函数
+    // 把这种类型转换为别的类型
     Fraction(int num, int den = 1): m_num(num), m_den(den) {}
     // # 1 转换函数 把分数当成一个double类型 转换类型
     // 表示分数可以转换为double 
@@ -22,7 +23,7 @@ private:
 
 class Fraction1{
 public:
-    // non-explicit-one-argument ctor (非显式的一个参数)
+    // non-explicit-one-argument ctor (非显式的一个参数)：可以把别的类型转换为这种类型，与上面方向相反
     // 这样的构造函数可以使得 编译器可以调用non-explicit-one-argument ctor将4转换为Fraction1
     Fraction1(int num, int den = 1): m_num(num), m_den(den) {}
 
