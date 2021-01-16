@@ -24,19 +24,24 @@ int main() {
     // cout << imag(10.0) << endl;
 
     cout << "sizeof(x):" << sizeof(x) << endl; // 8 double类型为8字节
-    cout << "sizeof(p):" << sizeof(p) << endl; // 8 指针为8字节
+    cout << "sizeof(p):" << sizeof(p) << endl; // 4 指针为4字节（32位电脑）
     cout << "sizeof(r):" << sizeof(r) << endl; // 8 引用指代double x 也是8字节
 
     cout << "x:" << x << endl;
-    cout << "r:" << r << endl;
-    cout << "p:" << p << endl;
+    cout << "r:" << r << endl; // 0 输出一个值
+    cout << "p:" << p << endl; // 输出一个地址
+    cout << "*p:" << *p << endl; // 0 输出一个值
+    
 
     // r引用指代x所以 r和x的地址一致
-    cout << "&x:" << &x << endl;
-    cout << "&r:"  << &r << endl;
+    cout << "&x:" << &x << endl; // 输出一个地址
+    cout << "&r:"  << &r << endl; // 输出一个地址
 
     S s;
     S& rs = s;
-    cout << "s:" << sizeof(s) << endl;
-    cout << "rs:" << sizeof(rs) << endl;
+    // s和rs大小相同地址相同（全都是假象）
+    cout << "s:" << sizeof(s) << endl; // 16
+    cout << "rs:" << sizeof(rs) << endl; // 16
+    cout << &s << endl; // 输出一个地址
+    cout << &rs << endl; // 输出一个地址
 }
